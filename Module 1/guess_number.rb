@@ -18,3 +18,8 @@ did_guess_number = false
         puts "Oops. Your guess was LOW."
     elsif guess > target 
         puts "Oops. Your guess was HIGH."
+    elsif guess == target
+        puts "Good job #{input}!"
+        puts "You guessed my number in #{num_guesses} guesses!"
+        did_guess_number = true
+    end
