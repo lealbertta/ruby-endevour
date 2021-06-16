@@ -9,6 +9,8 @@ num_guesses = 0
 max_guesses = 10
 
 did_guess_number = false
+
+until num_guesses == max_guesses || did_guess_number
     puts "You've got #{max_guesses - num_guesses} guesses left."
     print "Make a guess: "
     guess = gets.to_i
@@ -23,6 +25,9 @@ did_guess_number = false
         puts "You guessed my number in #{num_guesses} guesses!"
         did_guess_number = true
     end
+end
+
 unless did_guess_number
     puts "Sorry, you didn't get my number! It was #{target}"
 end
+
