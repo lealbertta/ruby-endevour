@@ -3,3 +3,5 @@ print "Before we get started, what's your name? "
 input = gets.chomp
 puts "Hello there #{input}!"
 
+
+target = rand(100+1)
