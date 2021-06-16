@@ -23,3 +23,6 @@ did_guess_number = false
         puts "You guessed my number in #{num_guesses} guesses!"
         did_guess_number = true
     end
+unless did_guess_number
+    puts "Sorry, you didn't get my number! It was #{target}"
+end
