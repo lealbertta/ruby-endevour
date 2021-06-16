@@ -11,3 +11,10 @@ max_guesses = 10
 did_guess_number = false
     puts "You've got #{max_guesses - num_guesses} guesses left."
     print "Make a guess: "
+    guess = gets.to_i
+    num_guesses += 1
+
+    if guess < target
+        puts "Oops. Your guess was LOW."
+    elsif guess > target 
+        puts "Oops. Your guess was HIGH."
