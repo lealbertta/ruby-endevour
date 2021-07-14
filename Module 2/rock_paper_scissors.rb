@@ -1,13 +1,12 @@
 @options = ["rock", "paper", "scissors"] 
 @winMapping = {"rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
-@winMessage = {"rock"=>"Rock crushes scissors", "paper"=>"Paper covers rock", "scissors"=>"Scissors cuts paper"}
 
 def calculate_result(playerOneAction, playerTwoAction)
     case
     when @winMapping[playerOneAction] == playerTwoAction
-        @winMessage[playerOneAction]
+        "Player 1 wins!"
     when @winMapping[playerTwoAction] == playerOneAction
-        @winMessage[playerTwoAction]
+        "Player 2 wins!"
     else
         return "Tie!"
     end
