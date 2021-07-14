@@ -1,16 +1,17 @@
 @options = ["rock", "paper", "scissors"] 
 @winMapping = {"rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
 @winMessage = {"rock"=>"Rock crushes scissors", "paper"=>"Paper covers rock", "scissors"=>"Scissors cuts paper"}
-@winnerFound = false
+@playerOneWins = 0
+@playerTwoWins = 0
 
 def calculate_result(playerOneAction, playerTwoAction)
     case
     when @winMapping[playerOneAction] == playerTwoAction
-        @winnerFound = true
-        return "#{@winMessage[playerOneAction]} \nPlayer 1 wins!"
+        @playerOneWins += 1
+        return @winMessage[playerOneAction]
     when @winMapping[playerTwoAction] == playerOneAction
-        @winnerFound = true
-        return "#{@winMessage[playerTwoAction]} \nPlayer 2 wins!"
+        @playerTwoWins += 1
+        return @winMessage[playerTwoAction]
     else
         return "Tie!"
     end
@@ -30,7 +31,7 @@ def get_inputs
 end
 
 puts "Rock Paper Scissors"
-until @winnerFound
+until (@playerTwoWins == 2 || @playerOneWins == 2)
     playerOne, playerTwo = get_inputs
     if (is_input_valid?(playerOne) && is_input_valid?(playerTwo)) 
         puts calculate_result(playerOne, playerTwo)
@@ -39,3 +40,4 @@ until @winnerFound
     end 
 end
 
+puts "Player #{@playerOneWins == 2 ? 1 : 2} wins!"
